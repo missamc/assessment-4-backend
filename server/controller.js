@@ -1,3 +1,9 @@
+
+const inspos = ['meditate', 'exercise', 'affirmations', 'VB']
+
+
+
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -20,10 +26,20 @@ module.exports = {
         res.status(200).send(randomFortune);
     },
 
-    getParamsSubmit: (req, res) => {
+    getInspo: (req, res) => {
+        res.status(200).send(inspos)
+    },
 
+    addInspo: (req, res) => {
+        inspos.push(+req.body)
 
-        res.status(200).send()
+        res.status(200).send(inspos)
     }
+
+    // getParamsSubmit: (req, res) => {
+
+
+    //     res.status(200).send()
+    // }
 
 }
