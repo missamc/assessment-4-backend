@@ -3,7 +3,7 @@ const fortuneBtn = document.getElementById("fortuneButton")
 
 let inspoSection = document.querySelector('#inspos')
 let input = document.querySelector('input')
-let addBtn = document.querySelector('button')
+let addBtn = document.querySelector('#inspoBtn')
 
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
@@ -30,7 +30,7 @@ function getInspo() {
     .then(res => {
         for(let i = 0; i < res.data.length; i++){
             let inspo = document.createElement('p')
-            inspo.textContent = '!' + res.data[i]
+            inspo.textContent = res.data[i]
             inspoSection.appendChild(inspo)
         }
     })
@@ -44,7 +44,7 @@ function addInspo(){
     .then(res => {
         for(let i = 0; i < res.data.length; i++){
             let inspo = document.createElement('p')
-            inspo.textContent = '!' + res.data[i]
+            inspo.textContent = res.data[i]
             inspoSection.appendChild(inspo)
         }
         input.value = ''

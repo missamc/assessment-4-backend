@@ -1,5 +1,5 @@
 
-const inspos = ['meditate', 'exercise', 'affirmations', 'VB']
+const inspos = ['meditate', 'exercise', 'affirmations', 'Vision board']
 
 
 
@@ -31,7 +31,8 @@ module.exports = {
     },
 
     addInspo: (req, res) => {
-        inspos.push(+req.body)
+        inspos.push(req.body.text)
+        console.log(req.body)
 
         res.status(200).send(inspos)
     }
